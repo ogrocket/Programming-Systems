@@ -12,17 +12,19 @@ double denomination__list(double  kinds__of__coins);
 double GR__AMOUNT();
 
 // вариант - номер в писке группы
-double VARIANT=0.;
+double VARIANT=2.;
 // последн€€ цифра номера группы
-double LAST__DIGIT__OF__GROUP__NUMBER=5.;
+double LAST__DIGIT__OF__GROUP__NUMBER=8.;
 //количество имеющихс€ номинмалов монет
-double KINDS__OF__COINS=3.;
+double KINDS__OF__COINS=5.;
 
 double first__denomination(double kinds__of__coins){
    return
 	( kinds__of__coins == 1. ? 1.
-	: kinds__of__coins == 2. ? 3.
- 	: kinds__of__coins == 3. ? 5.
+	: kinds__of__coins == 2. ? 2.
+ 	: kinds__of__coins == 3. ? 3.
+ 	: kinds__of__coins == 4. ? 25.
+ 	: kinds__of__coins == 5. ? 50.
 	: 0.
 	);
 }
@@ -93,7 +95,7 @@ int main(){
  display (count__change(GR__AMOUNT()) ); newline();
  KINDS__OF__COINS=13.;
  display (count__change(100.) ); newline();
- display ("(c) Golikov K.P. 2021\n");
+ display ("(c) Arapov S.A. 2021\n");
 
  std::cin.get();
  return 0;
