@@ -59,7 +59,7 @@
     (else (display (first-denomination kinds-of-coins))
           (display " ")
           (denomination-list (- kinds-of-coins 1))
-          -1)
+          )
     )
   )
 
