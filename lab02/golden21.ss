@@ -1,5 +1,12 @@
 ;golden21
-(define a 2)(define b 4)
+  
+(define a 2)
+(define b 4)
+(define total-iterations 0)
+(define mphi (* (- 3(sqrt 5))(/ 2.0)))
+(define tolerance 0.001)
+(define xmin 0)
+
 (define (fun x)
  (set! x (- x (/ 102 103)))
   (- (* 2 (sin x)(cos x)) 1/2)
@@ -16,12 +23,12 @@
  (set! total-iterations 0)
  (let(
       (xa (+ a (* mphi(- b a))))
-      (xb (+ b (-(* mphi(- b a)))))
+      (xb (- b (* mphi(- b a))))
      )
      (try a b xa (fun xa) xb (fun xb))
  )
 )
-(define mphi (* (- 3(sqrt 5))(/ 2.0)))
+
 (define (try a b xa ya xb yb)
  (if(close-enough? a b)
       (* (+ a b)0.5)
@@ -45,9 +52,6 @@
 )
 (define (close-enough? x y)
   (<(abs (- x y))tolerance))
-(define tolerance 0.001)
-(define total-iterations 0)
-(define xmin 0)
 (set! xmin(golden-section-search a b))
   (display"Interval=\t[")
   (display a)
